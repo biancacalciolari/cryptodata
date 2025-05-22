@@ -70,10 +70,6 @@ O dashboard contém:
 - O campo `changePercent24Hr` é transformado em percentual (ex: 1.15 → 115%).
 - O projeto não utiliza autenticação (API CoinCap sem chave obrigatória no endpoint usado).
 
-## 📄 Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
 ---
 
 Feito com 💙 por [Bianca Calciolari](https://github.com/biancacalciolari)
