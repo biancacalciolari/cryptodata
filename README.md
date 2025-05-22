@@ -1,53 +1,79 @@
-# 📊 Desafio Técnico - CryptoData
+# Desafio Técnico - CriptoDados 📊
 
-Este projeto faz parte de um desafio técnico que tem como objetivo a **coleta de dados de criptomoedas**, o **armazenamento em banco de dados relacional**, a **exportação para CSV** e a **criação de um dashboard interativo em Power BI**.
+Este projeto foi desenvolvido como parte de um desafio técnico e consiste em consumir dados da API [CoinCap](https://coincap.io/), armazená-los em um banco de dados SQLite, exportá-los para CSV e criar um dashboard analítico com Power BI.
 
----
+## 🔧 Tecnologias Utilizadas
 
-## 🚀 Objetivo
+- Python 3.10+
+- Bibliotecas: `requests`, `sqlite3`, `pandas`, `dotenv`
+- Power BI Desktop
+- Git & GitHub
 
-Consumir dados da [API CoinCap](https://docs.coincap.io/), armazenar os dados em uma base SQLite, transformá-los, exportá-los para um arquivo `.csv`, e então criar dashboards de visualização de KPIs e análises com **Power BI**.
+## 📁 Estrutura do Projeto
 
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- Python 3
-- SQLite
-- Pandas
-- Requests
-- Power BI
-
-## 🗂️ Estrutura do Projeto
-
+```
 cryptodata/
-
 │
-
-├── data/
-
-│   └── cryptos.csv          # Arquivo CSV com os dados processados
-
-│
-
 ├── src/
-
-│   ├── main.py              # Script principal: coleta, trata e salva os dados
-
-│   ├── api.py               # Função para consumir a API da CoinCap
-
-│   ├── database.py          # Funções de conexão e manipulação do banco de dados
-
-│   └── requirements.txt     # Bibliotecas utilizadas no projeto
-
+│   ├── api.py               # Consumo da API CoinCap
+│   ├── database.py          # Criação do banco e inserção dos dados
+│   ├── export_csv.py        # Exportação para CSV
+│   ├── main.py              # Execução principal do pipeline
+│   └── utils.py             # Funções auxiliares de transformação
 │
-
-├── crypto.db                # Banco de dados gerado com as informações
-
-│
-
+├── crypto.db                # Banco de dados SQLite gerado
+├── cryptos.csv              # Dados exportados em CSV
 ├── dashboard.pbix           # Dashboard Power BI com gráficos e análises
+├── README.md                # Documentação do projeto
+└── .gitignore               # Arquivos ignorados pelo Git
+```
 
-│
+## 🚀 Como Executar
 
-└── README.md                # Este arquivo
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/biancacalciolari/cryptodata.git
+cd cryptodata
+```
+
+2. Crie um ambiente virtual e instale as dependências:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate   # Windows
+
+pip install -r requirements.txt
+```
+
+3. Execute o pipeline para gerar banco de dados e CSV:
+
+```bash
+cd src
+python main.py
+```
+
+4. Abra o `dashboard.pbix` com o Power BI Desktop para visualizar os dados.
+
+## 📊 Dashboard Power BI
+
+O dashboard contém:
+
+- Tabela de detalhes das criptomoedas
+- Gráfico de barras com os preços
+- Gráfico de variação percentual 24h
+- Filtros interativos por nome e símbolo
+
+## 📌 Observações
+
+- O campo `changePercent24Hr` é transformado em percentual (ex: 1.15 → 115%).
+- O projeto não utiliza autenticação (API CoinCap sem chave obrigatória no endpoint usado).
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Feito com 💙 por [Bianca Calciolari](https://github.com/biancacalciolari)
