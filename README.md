@@ -4,10 +4,12 @@ Este projeto foi desenvolvido como parte de um desafio técnico e consiste em co
 
 ## 🔧 Tecnologias Utilizadas
 
-- Python 3.10+
-- Bibliotecas: `requests`, `sqlite3`, `pandas`, `dotenv`
-- Power BI Desktop
-- Git & GitHub
+- Python 3.x
+- SQLite
+- Pandas
+- Requests
+- Power BI
+- VSCode / Anaconda
 
 ## 📁 Estrutura do Projeto
 
