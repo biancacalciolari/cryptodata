@@ -14,18 +14,21 @@ Este projeto foi desenvolvido como parte de um desafio técnico e consiste em co
 ```
 cryptodata/
 │
-├── src/
-│   ├── api.py               # Consumo da API CoinCap
-│   ├── database.py          # Criação do banco e inserção dos dados
-│   ├── export_csv.py        # Exportação para CSV
-│   ├── main.py              # Execução principal do pipeline
-│   └── utils.py             # Funções auxiliares de transformação
+├── data/
+│ └── cryptos.csv # Arquivo CSV com os dados processados
 │
-├── crypto.db                # Banco de dados SQLite gerado
-├── cryptos.csv              # Dados exportados em CSV
-├── dashboard.pbix           # Dashboard Power BI com gráficos e análises
-├── README.md                # Documentação do projeto
-└── .gitignore               # Arquivos ignorados pelo Git
+├── src/
+│ ├── main.py # Script principal: coleta, trata e salva os dados
+│ ├── api.py # Função para consumir a API da CoinCap
+│ ├── database.py # Funções de conexão e manipulação do banco de dados
+│ └── requirements.txt # Bibliotecas utilizadas no projeto
+│
+├── crypto.db # Banco de dados gerado com as informações
+│
+├── dashboard.pbix # Dashboard Power BI com gráficos e análises
+│
+└── README.md # Este arquivo
+
 ```
 
 ## 🚀 Como Executar
@@ -68,7 +71,6 @@ O dashboard contém:
 ## 📌 Observações
 
 - O campo `changePercent24Hr` é transformado em percentual (ex: 1.15 → 115%).
-- O projeto não utiliza autenticação (API CoinCap sem chave obrigatória no endpoint usado).
 
 ---
 
